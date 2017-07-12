@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            margin-top: 100px;
+            width: 100%;
+            height: 3px;
+            position: relative;
+            line-height: 3px;
+            /*background-color: pink;*/
+        }
+        .box1{
+            width: 0;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1"></div>
+    </div>
+<button id="btn">点击开始</button>
+</body>
+<script>
+    var box=document.querySelector(".box1");
+    var btn=document.querySelector("#btn");
+    var num=0
+    btn.onclick=function(){
+        var timer=setInterval(function(){
+            num++;
+            box.style.width=num+"%"
+            if(num==100){
+                clearInterval(timer)
+            }
+        },20)
+    }
+
+</script>
+</html>
